@@ -5,8 +5,137 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PR_4_lamaev"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="800" Width="800">
+    <Grid Background="Linen"  Margin="0,0,0,2" >
+        <TextBlock Text="Табица посетителей:" FontSize="15" Margin="5,0,620,572" />
+
+        <StackPanel Margin="0,21,343,404" RenderTransformOrigin="0.5,0.5" Orientation="Horizontal"  >
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.278"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <TextBlock Text="Имя" FontSize="15" Width="102"/>
+            <TextBlock Text="Фамилия" FontSize="15" Width="108"/>
+            <TextBlock Text="Отчество" FontSize="15" Width="103"/>
+            <TextBlock Text="День рождения" FontSize="15"/>
+            <Button x:Name="bt1" Content="Изменить" Height="30" Width="73" Margin="-65,100,0,0"/>
+        </StackPanel>
+        <ListBox x:Name="List_Visitors" Margin="-1,51,355,547" RenderTransformOrigin="0.5,0.5" >
+            <ListBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="359.704"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ListBox.RenderTransform>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding LastName}" FontSize="15" />
+                        <TextBlock Grid.Column="1" Text="{Binding FirstName}" FontSize="15" />
+                        <TextBlock Grid.Column="2" Text="{Binding MiddleName}" FontSize="15" />
+                        <TextBlock Grid.Column="3" Text="{Binding DOB}" FontSize="15" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock Text="Табица Меню:" FontSize="15" Margin="5,235,620,361" />
+        <StackPanel Margin="0,258,331,162" RenderTransformOrigin="0.5,0.5" Orientation="Horizontal" >
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.278"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <TextBlock Text="Название блюда" FontSize="15" Width="144"/>
+            <TextBlock Text="Цена" FontSize="15" Width="72"/>
+            <TextBlock Text="Номинальное кол-во" FontSize="15" Width="166"/>
+            <TextBlock Text="Наличие" FontSize="15" Width="102"/>
+            <Button x:Name="bt2" Content="Изменить" Height="30" Width="73" Margin="-170,120,0,0"/>
+        </StackPanel>
+        <ListBox x:Name="List_Menu" Margin="-2,283,339,309" RenderTransformOrigin="0.5,0.5" >
+            <ListBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="359.704"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ListBox.RenderTransform>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="35"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding Name_dish}" FontSize="15" />
+                        <TextBlock Grid.Column="1" Text="{Binding Price}" FontSize="15" />
+                        <TextBlock Grid.Column="2" Text="{Binding Nominal_quantity}" FontSize="15" />
+                        <TextBlock Grid.Column="3" Text="{Binding Availability}" FontSize="15" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock Text="Табица заказов:" FontSize="15" Margin="5,500,620,158" />
+        <StackPanel Margin="0,531,311,-1" RenderTransformOrigin="0.5,0.5"  Orientation="Horizontal">
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.278"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <TextBlock Text="Посетитель" FontSize="15" Width="108"/>
+            <TextBlock Text="Меню" FontSize="15" Width="109"/>
+            <TextBlock Text="Количество блюда" FontSize="15" Width="144"/>
+            <TextBlock Text="Дата заказа" FontSize="15" Width="175"/>
+            
+            <Button x:Name="bt3" Content="Изменить" Height="30" Width="73" Margin="-200,215,0,0"/>
+        </StackPanel>
+        <ListBox x:Name="List_Orders" Margin="2,556,339,36" RenderTransformOrigin="0.5,0.5" >
+            <ListBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="359.704"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ListBox.RenderTransform>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75"/>
+                            <ColumnDefinition Width="160"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="200"/>
+                            
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding Visitor.FirstName}" FontSize="15" />
+                        <TextBlock Grid.Column="1" Text="{Binding Menu.Name_dish}" FontSize="15" />
+                        <TextBlock Grid.Column="2" Text="{Binding quantity_dish}" FontSize="15" />
+                        <TextBlock Grid.Column="3" Text="{Binding Date_orders}" FontSize="15" />
+                       
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>
