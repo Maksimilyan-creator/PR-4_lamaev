@@ -1,0 +1,74 @@
+﻿<Window x:Class="PR_4_lamaev.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PR_4_lamaev"
+        mc:Ignorable="d"
+        Title="Window1" Height="470" Width="550">
+    <Grid Margin="0,0,0,3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="443*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75" />
+            <RowDefinition />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,68,0,0" >
+            <Button x:Name="Bt6" Content="Добавить запись" Height="30" Width="110"  Click="Bt6_Click" />
+            <Button x:Name="Bt7" Content="Изменить запись" Height="30" Width="110" Click="Bt7_Click" />
+            <Button x:Name="Bt8" Content="Удалить" Height="30" Width="110" Click="Bt8_Click" />
+        </StackPanel>
+
+        <StackPanel RenderTransformOrigin="0.5,0.5" Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2" >
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.278"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <TextBlock Text="Фамилия" FontSize="15" Width="102" Margin="5,0,0,0"/>
+            <TextBlock Text="Имя" FontSize="15" Width="108"/>
+            <TextBlock Text="Отчество" FontSize="15" Width="103"/>
+            <TextBlock Text="День рождения" FontSize="15" Width="137"/>
+        </StackPanel>
+        <ListBox x:Name="List_Visitors1"  RenderTransformOrigin="0.5,0.5" Grid.Row="1" Margin="0,24,0,15" Grid.ColumnSpan="2" >
+            <ListBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="359.704"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ListBox.RenderTransform>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding LastName}" FontSize="15" />
+                        <TextBlock Grid.Column="1" Text="{Binding FirstName}" FontSize="15" />
+                        <TextBlock Grid.Column="2" Text="{Binding MiddleName}" FontSize="15" />
+                        <TextBlock Grid.Column="3" Text="{Binding DOB}" FontSize="15" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Row="1" Margin="0,256,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+            <TextBlock Text="Введите ФИО:" FontSize="15" Margin="0,5,415,0" Height="26" Width="126" />
+            <TextBox x:Name="add1" FontSize="15" Width="138" Margin="0,-25,195,0" />
+            <TextBox x:Name="add2" FontSize="15"  Width="138" Margin="0,-25,-90,0" />
+            <TextBox x:Name="add3" FontSize="15" Width="138" Margin="0,-25,-375,0"/>
+            <TextBlock Text="Введите День рождения:" FontSize="15" Height="26" Width="177" Margin="0,5,365,0" />
+            <TextBox x:Name="add4" FontSize="15" Width="138" Margin="0,-25,55,0" />
+        </StackPanel>
+    </Grid>
+</Window>

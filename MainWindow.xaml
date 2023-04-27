@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PR_4_lamaev"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="800">
+        Title="MainWindow" MinHeight="800" MaxWidth="800">
     <Grid Background="Linen"  Margin="0,0,0,2" >
         <TextBlock Text="Табица посетителей:" FontSize="15" Margin="5,0,620,572" />
 
@@ -22,7 +22,8 @@
             <TextBlock Text="Фамилия" FontSize="15" Width="108"/>
             <TextBlock Text="Отчество" FontSize="15" Width="103"/>
             <TextBlock Text="День рождения" FontSize="15"/>
-            <Button x:Name="bt1" Content="Изменить" Height="30" Width="73" Margin="-65,100,0,0"/>
+            <Button x:Name="bt1" Content="Изменить" Height="30" Width="73" Margin="-65,100,0,0" Click="bt1_Click"/>
+            <Button x:Name="btt1" Content="Обновить" Height="30" Width="73" Margin="-230,100,0,0" Click="btt1_Click"/>
         </StackPanel>
         <ListBox x:Name="List_Visitors" Margin="-1,51,355,547" RenderTransformOrigin="0.5,0.5" >
             <ListBox.RenderTransform>
@@ -64,7 +65,8 @@
             <TextBlock Text="Цена" FontSize="15" Width="72"/>
             <TextBlock Text="Номинальное кол-во" FontSize="15" Width="166"/>
             <TextBlock Text="Наличие" FontSize="15" Width="102"/>
-            <Button x:Name="bt2" Content="Изменить" Height="30" Width="73" Margin="-170,120,0,0"/>
+            <Button x:Name="bt2" Content="Изменить" Height="30" Width="73" Margin="-170,120,0,0" Click="bt2_Click"/>
+            <Button x:Name="btt2" Content="Обновить" Height="30" Width="73" Margin="-325,120,0,0" Click="btt2_Click"/>
         </StackPanel>
         <ListBox x:Name="List_Menu" Margin="-2,283,339,309" RenderTransformOrigin="0.5,0.5" >
             <ListBox.RenderTransform>
@@ -93,7 +95,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <TextBlock Text="Табица заказов:" FontSize="15" Margin="5,500,620,158" />
-        <StackPanel Margin="0,531,311,-1" RenderTransformOrigin="0.5,0.5"  Orientation="Horizontal">
+        <StackPanel Margin="0,531,1,-1" RenderTransformOrigin="0.5,0.5"  Orientation="Horizontal">
             <StackPanel.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -103,13 +105,24 @@
                 </TransformGroup>
             </StackPanel.RenderTransform>
             <TextBlock Text="Посетитель" FontSize="15" Width="108"/>
-            <TextBlock Text="Меню" FontSize="15" Width="109"/>
-            <TextBlock Text="Количество блюда" FontSize="15" Width="144"/>
-            <TextBlock Text="Дата заказа" FontSize="15" Width="175"/>
-            
-            <Button x:Name="bt3" Content="Изменить" Height="30" Width="73" Margin="-200,215,0,0"/>
+            <TextBlock Text="Меню" FontSize="15" Width="145"/>
+            <TextBlock Text="Количество блюда" FontSize="15" Width="157"/>
+            <TextBlock Text="Дата заказа" FontSize="15" Width="166" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="0.613"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0.936"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+
+            <Button x:Name="bt3" Content="Изменить" Height="30" Width="73" Margin="15,0,0,0" Click="bt3_Click"/>
+            <Button x:Name="btt3" Content="Обновить" Height="30" Width="73" Margin="-73,80,0,0" Click="btt3_Click"/>
+            <Button x:Name="bt4" Content="Инвентаризация" Height="30" Width="97" Margin="15" Click="bt4_Click" />
         </StackPanel>
-        <ListBox x:Name="List_Orders" Margin="2,556,339,36" RenderTransformOrigin="0.5,0.5" >
+        <ListBox x:Name="List_Orders" Margin="2,556,221,36" RenderTransformOrigin="0.5,0.5" >
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="1"/>
@@ -122,10 +135,10 @@
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="75"/>
-                            <ColumnDefinition Width="160"/>
                             <ColumnDefinition Width="100"/>
                             <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="145"/>
                             
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Text="{Binding Visitor.FirstName}" FontSize="15" />

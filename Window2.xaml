@@ -1,0 +1,74 @@
+﻿<Window x:Class="PR_4_lamaev.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PR_4_lamaev"
+        mc:Ignorable="d"
+        Title="Window2" Height="470" Width="550">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="443*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75" />
+            <RowDefinition />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,68,0,0" >
+            <Button x:Name="Bt9" Content="Добавить запись" Height="30" Width="110" Click="Bt9_Click"   />
+            <Button x:Name="Bt10" Content="Изменить запись" Height="30" Width="110" Click="Bt10_Click"  />
+            <Button x:Name="Bt11" Content="Удалить" Height="30" Width="110" Click="Bt11_Click"  />
+        </StackPanel>
+
+        <StackPanel RenderTransformOrigin="0.5,0.5" Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2" >
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.278"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <TextBlock Text="Название блюда" FontSize="15" Width="144" Margin="5,0,0,0"/>
+            <TextBlock Text="Цена" FontSize="15" Width="106"/>
+            <TextBlock Text="Номинальное кол-во" FontSize="15" Width="176"/>
+            <TextBlock Text="Наличие" FontSize="15" Width="137"/>
+        </StackPanel>
+        <ListBox x:Name="List_Visitors1"  RenderTransformOrigin="0.5,0.5" Grid.Row="1" Margin="0,24,0,15" Grid.ColumnSpan="2" >
+            <ListBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="359.704"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ListBox.RenderTransform>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="35"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding Name_dish}" FontSize="15" />
+                        <TextBlock Grid.Column="1" Text="{Binding Price}" FontSize="15" />
+                        <TextBlock Grid.Column="2" Text="{Binding Nominal_quantity}" FontSize="15" />
+                        <TextBlock Grid.Column="3" Text="{Binding Availability}" FontSize="15" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Row="1" Margin="0,256,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+            <TextBlock Text="Введите инф:" FontSize="15" Margin="0,5,415,0" Height="26" Width="126" />
+            <TextBox x:Name="add1" FontSize="15" Width="138" Margin="0,-25,195,0" />
+            <TextBox x:Name="add2" FontSize="15"  Width="138" Margin="0,-25,-90,0" />
+            <TextBox x:Name="add3" FontSize="15" Width="138" Margin="0,-25,-375,0"/>
+            <TextBlock Text="Введите инф:" FontSize="15" Height="26" Width="177" Margin="0,5,365,0" />
+            <TextBox x:Name="add4" FontSize="15" Width="138" Margin="0,-25,55,0" />
+        </StackPanel>
+    </Grid>
+</Window>
